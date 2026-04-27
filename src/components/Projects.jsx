@@ -56,12 +56,13 @@ const Projects = () => {
       description: 'Advanced machine learning model to forecast sustainable energy consumption patterns across Bangladesh. Uses LSTM and ARIMA models for accurate predictions.',
       longDescription: 'This project uses advanced machine learning techniques including LSTM neural networks and ARIMA models to forecast sustainable energy consumption patterns across different divisions of Bangladesh. The model achieves 94% accuracy and helps in planning renewable energy infrastructure. Built with Python, Streamlit, and Firebase for data storage.',
       image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80',
-      link: 'https://capstoneprojectb-400.streamlit.app/',
+      link: 'https://1test400c.streamlit.app/',
       github: 'https://github.com',
       tech: ['Python', 'Streamlit', 'LSTM', 'ARIMA', 'Pandas', 'Scikit-learn', 'Firebase'],
       date: '2025',
       category: 'Data Science',
       featured: true,
+      sortOrder: 3,
       icon: <Brain className="text-purple-400" size={20} />
     },
     {
@@ -92,7 +93,23 @@ const Projects = () => {
       date: '2026',
       category: 'Web App',
       featured: true,
+      sortOrder: 1,
       icon: <Moon className="text-yellow-400" size={20} />
+    },
+    {
+      id: 19,
+      title: 'Ghoroa Guru',
+      description: 'Helping hand management service platform connecting households with trusted domestic workers and service providers.',
+      longDescription: 'A comprehensive platform that bridges the gap between households and reliable domestic service providers. Features include service booking, worker profiles, ratings and reviews, scheduling management, and secure payment handling. Designed to simplify the process of finding trustworthy helping hands. Built with React and Firebase for real-time bookings.',
+      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80',
+      link: 'https://ghoroa-guru-w1pj.vercel.app/',
+      github: 'https://github.com',
+      tech: ['React', 'Tailwind', 'Framer Motion', 'Firebase Auth', 'Firestore'],
+      date: '2026',
+      category: 'Web App',
+      featured: true,
+      sortOrder: 1,
+      icon: <Home className="text-orange-400" size={20} />
     },
     {
       id: 10,
@@ -106,6 +123,7 @@ const Projects = () => {
       date: '2026',
       category: 'Productivity',
       featured: true,
+      sortOrder: 4,
       icon: <Target className="text-green-400" size={20} />
     },
 
@@ -115,13 +133,14 @@ const Projects = () => {
       title: 'Disney Plus Hotstar Clone',
       description: 'Pixel-perfect Disney Plus Hotstar clone with authentic UI/UX. Features movie browsing, categories, and responsive design.',
       longDescription: 'A meticulously crafted Disney Plus Hotstar clone that captures the original platform\'s magic. Includes movie/show browsing by category, search functionality, responsive design, and smooth animations. Built with React, Tailwind CSS, and Firebase for user authentication and watchlists.',
-      image: 'https://images.unsplash.com/photo-1598899134731-9618f6e1f7b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80',
+      image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80',
       link: 'https://disney-plus-two-plum.vercel.app/',
       github: 'https://github.com',
       tech: ['React', 'Tailwind', 'Redux', 'Firebase Auth', 'Firestore', 'TMDB API'],
       date: '2025',
       category: 'Clone',
       featured: true,
+      sortOrder: 5,
       icon: <Rocket className="text-blue-400" size={20} />
     },
     {
@@ -136,6 +155,7 @@ const Projects = () => {
       date: '2025',
       category: 'Management System',
       featured: true,
+      sortOrder: 6,
       icon: <Shield className="text-green-600" size={20} />
     },
     {
@@ -150,6 +170,7 @@ const Projects = () => {
       date: '2025',
       category: 'Management System',
       featured: true,
+      sortOrder: 7,
       icon: <Users className="text-purple-500" size={20} />
     },
     {
@@ -164,6 +185,7 @@ const Projects = () => {
       date: '2025',
       category: 'Education',
       featured: true,
+      sortOrder: 8,
       icon: <BookOpen className="text-blue-400" size={20} />
     },
     {
@@ -178,6 +200,7 @@ const Projects = () => {
       date: '2025',
       category: 'Utility',
       featured: true,
+      sortOrder: 9,
       icon: <Heart className="text-red-400" size={20} />
     },
     {
@@ -192,6 +215,7 @@ const Projects = () => {
       date: '2025',
       category: 'Content',
       featured: true,
+      sortOrder: 10,
       icon: <BookOpen className="text-orange-400" size={20} />
     },
     {
@@ -206,6 +230,7 @@ const Projects = () => {
       date: '2025',
       category: 'Management System',
       featured: true,
+      sortOrder: 11,
       icon: <ShoppingCart className="text-yellow-500" size={20} />
     },
 
@@ -324,15 +349,14 @@ const Projects = () => {
 
   const categories = ['All', 'Data Science', 'Featured', '2026', '2025', '2024', 'Web App', 'Management System', 'Productivity', 'E-commerce', 'Education', 'Utility', 'Business', 'Clone', 'UI/UX', 'Content'];
 
-  // First show featured projects, then others, sort by year (newest first)
+  // Sort: featured first using sortOrder, then non-featured by year descending
   const sortedProjects = [...projects].sort((a, b) => {
     if (a.featured && !b.featured) return -1;
     if (!a.featured && b.featured) return 1;
-    // Sort by year (2026 first, then 2025, then 2024)
-    if (a.date !== b.date) {
-      return parseInt(b.date) - parseInt(a.date);
+    if (a.featured && b.featured) {
+      return (a.sortOrder || 99) - (b.sortOrder || 99);
     }
-    return 0;
+    return parseInt(b.date) - parseInt(a.date);
   });
 
   const filteredProjects = filter === 'All'
@@ -391,7 +415,7 @@ const Projects = () => {
             transition={{ delay: 0.1 }}
             className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-4 text-center border border-purple-500/30"
           >
-            <div className="text-3xl font-bold text-white">18+</div>
+            <div className="text-3xl font-bold text-white">19+</div>
             <div className="text-sm text-gray-400">Total Projects</div>
           </motion.div>
           <motion.div
@@ -400,7 +424,7 @@ const Projects = () => {
             transition={{ delay: 0.2 }}
             className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl p-4 text-center border border-blue-500/30"
           >
-            <div className="text-3xl font-bold text-white">10</div>
+            <div className="text-3xl font-bold text-white">11</div>
             <div className="text-sm text-gray-400">Featured</div>
           </motion.div>
           <motion.div
@@ -436,12 +460,12 @@ const Projects = () => {
                 setCurrentPage(0);
               }}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${filter === cat
-                  ? cat === '2026'
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                    : cat === '2025'
-                      ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg'
-                      : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                  : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-purple-500/30'
+                ? cat === '2026'
+                  ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                  : cat === '2025'
+                    ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg'
+                    : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-purple-500/30'
                 }`}
             >
               {cat}
@@ -472,12 +496,12 @@ const Projects = () => {
                   className="group"
                 >
                   <div className={`bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden border transition-all h-full ${project.featured
-                      ? project.date === '2026'
-                        ? 'border-purple-500/50 hover:border-purple-500 shadow-lg shadow-purple-500/20'
-                        : project.date === '2025'
-                          ? 'border-blue-500/50 hover:border-blue-500 shadow-lg shadow-blue-500/20'
-                          : 'border-yellow-500/50 hover:border-yellow-500 shadow-lg shadow-yellow-500/20'
-                      : 'border-gray-500/30 hover:border-gray-500'
+                    ? project.date === '2026'
+                      ? 'border-purple-500/50 hover:border-purple-500 shadow-lg shadow-purple-500/20'
+                      : project.date === '2025'
+                        ? 'border-blue-500/50 hover:border-blue-500 shadow-lg shadow-blue-500/20'
+                        : 'border-yellow-500/50 hover:border-yellow-500 shadow-lg shadow-yellow-500/20'
+                    : 'border-gray-500/30 hover:border-gray-500'
                     }`}>
                     {/* Image */}
                     <div className="relative h-48 overflow-hidden">
@@ -543,13 +567,13 @@ const Projects = () => {
                         )}
                       </div>
 
-                      {/* Links */}
+                      {/* Links - equal width buttons */}
                       <div className="flex gap-3">
                         <a
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-sm hover:opacity-90 transition-opacity"
+                          className="flex flex-1 items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-sm hover:opacity-90 transition-opacity"
                         >
                           <ExternalLink size={14} />
                           Live Demo
@@ -558,7 +582,7 @@ const Projects = () => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-lg text-sm hover:bg-white/20 transition-colors"
+                          className="flex flex-1 items-center justify-center gap-2 px-4 py-2 bg-white/10 text-white rounded-lg text-sm hover:bg-white/20 transition-colors"
                         >
                           <Github size={14} />
                           Code
@@ -580,8 +604,8 @@ const Projects = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className={`p-3 rounded-full transition-all ${currentPage === 0
-                    ? 'bg-gray-700/50 text-gray-500 cursor-not-allowed'
-                    : 'bg-purple-500/20 hover:bg-purple-500 text-white border border-purple-500/30'
+                  ? 'bg-gray-700/50 text-gray-500 cursor-not-allowed'
+                  : 'bg-purple-500/20 hover:bg-purple-500 text-white border border-purple-500/30'
                   }`}
               >
                 <ChevronLeft size={24} />
@@ -597,8 +621,8 @@ const Projects = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className={`p-3 rounded-full transition-all ${currentPage === totalPages - 1
-                    ? 'bg-gray-700/50 text-gray-500 cursor-not-allowed'
-                    : 'bg-purple-500/20 hover:bg-purple-500 text-white border border-purple-500/30'
+                  ? 'bg-gray-700/50 text-gray-500 cursor-not-allowed'
+                  : 'bg-purple-500/20 hover:bg-purple-500 text-white border border-purple-500/30'
                   }`}
               >
                 <ChevronRight size={24} />

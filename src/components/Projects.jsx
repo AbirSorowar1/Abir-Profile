@@ -34,7 +34,9 @@ import {
   Database,
   Server,
   Cpu,
-  GitBranch
+  GitBranch,
+  Utensils,
+  Wifi
 } from 'lucide-react';
 
 const Projects = () => {
@@ -62,7 +64,7 @@ const Projects = () => {
       date: '2025',
       category: 'Data Science',
       featured: true,
-      sortOrder: 3,
+      sortOrder: 4,
       icon: <Brain className="text-purple-400" size={20} />
     },
     {
@@ -111,6 +113,24 @@ const Projects = () => {
       sortOrder: 1,
       icon: <Home className="text-orange-400" size={20} />
     },
+
+    // NEW PROJECT - sortOrder 3
+    {
+      id: 20,
+      title: '2Hungry',
+      description: 'Restaurant website with food delivery service. Browse menu, place orders, and get food delivered right to your door.',
+      longDescription: 'A complete restaurant website offering both dine-in and food delivery services. Features include interactive menu browsing, online order placement, delivery tracking, user authentication, and order history. Built with React, Tailwind CSS, and Firebase for real-time order management.',
+      image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80',
+      link: 'https://2-hungry.vercel.app/',
+      github: 'https://github.com',
+      tech: ['React', 'Tailwind CSS', 'Firebase'],
+      date: '2026',
+      category: 'Web App',
+      featured: true,
+      sortOrder: 3,
+      icon: <Utensils className="text-orange-400" size={20} />
+    },
+
     {
       id: 10,
       title: 'Office Todo Pro 2026',
@@ -123,8 +143,42 @@ const Projects = () => {
       date: '2026',
       category: 'Productivity',
       featured: true,
-      sortOrder: 4,
+      sortOrder: 5,
       icon: <Target className="text-green-400" size={20} />
+    },
+
+    // NEW PROJECT - sortOrder 6
+    {
+      id: 21,
+      title: 'Seba Ghor',
+      description: 'Helping hand management platform connecting households with trusted service providers for domestic needs.',
+      longDescription: 'A helping hand management platform that connects households with reliable domestic service providers. Built with HTML, CSS, and JavaScript, the platform allows users to find, contact, and schedule domestic helpers for various household tasks. Simple and effective interface for managing home service needs.',
+      image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80',
+      link: 'https://tahsinstudy26-ux.github.io/Seba_Ghor/seba-ghor.html',
+      github: 'https://github.com',
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      date: '2025',
+      category: 'Web App',
+      featured: true,
+      sortOrder: 6,
+      icon: <Home className="text-green-400" size={20} />
+    },
+
+    // NEW PROJECT - sortOrder 7
+    {
+      id: 22,
+      title: 'NetCare',
+      description: 'Net servicing center platform where customers can find internet service technicians and schedule service appointments.',
+      longDescription: 'A comprehensive net servicing center platform that bridges customers with internet service technicians. Features include technician profiles, service scheduling, appointment management, service tracking, and customer reviews. Makes it easy to find and book reliable internet service professionals. Built with React, Tailwind CSS, and Firebase.',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80',
+      link: 'https://net-care.vercel.app/',
+      github: 'https://github.com',
+      tech: ['React', 'Tailwind CSS', 'Firebase'],
+      date: '2026',
+      category: 'Web App',
+      featured: true,
+      sortOrder: 7,
+      icon: <Wifi className="text-blue-400" size={20} />
     },
 
     // Featured Projects 2025
@@ -140,7 +194,7 @@ const Projects = () => {
       date: '2025',
       category: 'Clone',
       featured: true,
-      sortOrder: 5,
+      sortOrder: 8,
       icon: <Rocket className="text-blue-400" size={20} />
     },
     {
@@ -155,7 +209,7 @@ const Projects = () => {
       date: '2025',
       category: 'Management System',
       featured: true,
-      sortOrder: 6,
+      sortOrder: 9,
       icon: <Shield className="text-green-600" size={20} />
     },
     {
@@ -170,7 +224,7 @@ const Projects = () => {
       date: '2025',
       category: 'Management System',
       featured: true,
-      sortOrder: 7,
+      sortOrder: 10,
       icon: <Users className="text-purple-500" size={20} />
     },
     {
@@ -185,7 +239,7 @@ const Projects = () => {
       date: '2025',
       category: 'Education',
       featured: true,
-      sortOrder: 8,
+      sortOrder: 11,
       icon: <BookOpen className="text-blue-400" size={20} />
     },
     {
@@ -200,7 +254,7 @@ const Projects = () => {
       date: '2025',
       category: 'Utility',
       featured: true,
-      sortOrder: 9,
+      sortOrder: 12,
       icon: <Heart className="text-red-400" size={20} />
     },
     {
@@ -215,7 +269,7 @@ const Projects = () => {
       date: '2025',
       category: 'Content',
       featured: true,
-      sortOrder: 10,
+      sortOrder: 13,
       icon: <BookOpen className="text-orange-400" size={20} />
     },
     {
@@ -230,7 +284,7 @@ const Projects = () => {
       date: '2025',
       category: 'Management System',
       featured: true,
-      sortOrder: 11,
+      sortOrder: 14,
       icon: <ShoppingCart className="text-yellow-500" size={20} />
     },
 

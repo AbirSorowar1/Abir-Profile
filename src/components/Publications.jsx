@@ -40,12 +40,12 @@ const Publications = () => {
       title: 'DeepWeeds: Vision Transformers for Image Classification with Self-Supervised Pretraining',
       description: 'A novel approach using Vision Transformers for image classification with self-supervised pretraining techniques.',
       fullTitle: 'DeepWeeds: Vision Transformers for Image Classification with Self-Supervised Pretraining',
-      link: 'https://ieeexplore.ieee.org/document/XXXXXXX', // Update with actual link
-      publisher: 'IEEE Transactions on Pattern Analysis and Machine Intelligence',
+      link: 'https://ieeexplore.ieee.org/document/11545838',
+      publisher: 'IEEE',
       year: '2026',
-      doi: '10.1109/TPAMI.2026.XXXXXXX',
+      doi: '10.1109/EXAMPLE.2026.11545838',
       citations: 0,
-      type: 'Journal Article',
+      type: 'Conference Paper',
       authors: ['Shakib Ibna Sorowar Abir'],
       keywords: ['Vision Transformers', 'Image Classification', 'Self-Supervised Pretraining', 'Deep Learning']
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Briefcase, Calendar, MapPin, Award, BookOpen, Code } from 'lucide-react';
+import { Calendar, MapPin, BookOpen, Code, BarChart3 } from 'lucide-react';
 
 const Experience = () => {
   const [ref, inView] = useInView({
@@ -10,6 +10,26 @@ const Experience = () => {
   });
 
   const experiences = [
+    {
+      title: 'Data Analyst',
+      company: 'Amal',
+      location: 'Dhaka, Bangladesh',
+      period: '2026 - Present',
+      description: [
+        'Collected, organized, and maintained creator data across multiple regions and social media platforms',
+        'Conducted creator research and verified information including follower counts, nationality, location, content type, and social media profiles',
+        'Analyzed creator content and audience fit for Amal and categorized creators based on relevant content areas',
+        'Maintained and standardized Creator Database and Status Dataset entries while identifying and correcting incomplete or inconsistent information',
+        'Conducted public content and background research to identify relevant creator information and documented findings in structured datasets',
+        'Contributed to Creator Database automation initiatives and prepared proposals for improving data collection and management workflows'
+      ],
+      achievements: [
+        'Managed and updated large-scale creator datasets across multiple regions',
+        'Contributed to Creator Database automation and workflow improvement',
+        'Supported creator research, verification, and ecosystem development'
+      ],
+      icon: <BarChart3 size={24} />
+    },
     {
       title: 'Full Stack Developer Intern',
       company: 'Boomdevs Information Technology Company',
@@ -71,9 +91,8 @@ const Experience = () => {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className={`relative mb-12 flex flex-col ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                className={`relative mb-12 flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
               >
                 {/* Timeline Dot */}
                 <motion.div
@@ -86,15 +105,23 @@ const Experience = () => {
                 </motion.div>
 
                 {/* Content */}
-                <div className={`ml-14 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                <div
+                  className={`ml-14 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
+                    }`}
+                >
                   <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30 hover:border-purple-500 transition-all">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white">
                         {exp.icon}
                       </div>
+
                       <div>
-                        <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                        <p className="text-purple-400 font-medium">{exp.company}</p>
+                        <h3 className="text-xl font-bold text-white">
+                          {exp.title}
+                        </h3>
+                        <p className="text-purple-400 font-medium">
+                          {exp.company}
+                        </p>
                       </div>
                     </div>
 
@@ -103,6 +130,7 @@ const Experience = () => {
                         <Calendar size={14} />
                         {exp.period}
                       </span>
+
                       <span className="flex items-center gap-1">
                         <MapPin size={14} />
                         {exp.location}
@@ -110,17 +138,26 @@ const Experience = () => {
                     </div>
 
                     <div className="mb-4">
-                      <h4 className="text-white font-semibold mb-2">Responsibilities:</h4>
+                      <h4 className="text-white font-semibold mb-2">
+                        Responsibilities:
+                      </h4>
+
                       <ul className="space-y-2">
                         {exp.description.map((item, i) => (
                           <motion.li
                             key={i}
                             initial={{ opacity: 0, x: -20 }}
-                            animate={inView ? { opacity: 1, x: 0 } : {}}
-                            transition={{ delay: index * 0.2 + i * 0.1 }}
+                            animate={
+                              inView ? { opacity: 1, x: 0 } : {}
+                            }
+                            transition={{
+                              delay: index * 0.2 + i * 0.1,
+                            }}
                             className="text-gray-300 text-sm flex items-start gap-2"
                           >
-                            <span className="text-purple-400 mt-1">•</span>
+                            <span className="text-purple-400 mt-1">
+                              •
+                            </span>
                             {item}
                           </motion.li>
                         ))}
@@ -128,14 +165,29 @@ const Experience = () => {
                     </div>
 
                     <div>
-                      <h4 className="text-white font-semibold mb-2">Key Achievements:</h4>
+                      <h4 className="text-white font-semibold mb-2">
+                        Key Achievements:
+                      </h4>
+
                       <div className="flex flex-wrap gap-2">
                         {exp.achievements.map((achievement, i) => (
                           <motion.span
                             key={i}
-                            initial={{ opacity: 0, scale: 0.5 }}
-                            animate={inView ? { opacity: 1, scale: 1 } : {}}
-                            transition={{ delay: index * 0.2 + i * 0.1 }}
+                            initial={{
+                              opacity: 0,
+                              scale: 0.5,
+                            }}
+                            animate={
+                              inView
+                                ? {
+                                  opacity: 1,
+                                  scale: 1,
+                                }
+                                : {}
+                            }
+                            transition={{
+                              delay: index * 0.2 + i * 0.1,
+                            }}
                             className="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-xs text-purple-300"
                           >
                             {achievement}

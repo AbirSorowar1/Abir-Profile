@@ -22,6 +22,7 @@ import {
   Utensils,
   Wifi,
   MessageSquare,
+  BarChart3,
 } from 'lucide-react';
 
 const unsplash = (id) =>
@@ -50,6 +51,23 @@ const projects = [
     icon: <Moon className="text-yellow-400" size={20} />,
   },
   {
+    id: 24,
+    title: 'Sales Plus Dashboard',
+    description:
+      'Interactive sales analytics dashboard with live Google Sheets data, revenue and profit KPIs, order insights, and detailed sales breakdowns.',
+    longDescription:
+      'A comprehensive sales dashboard that brings business performance into one clear view. Monitor revenue, profit, orders, average order value, ratings, and returns; explore monthly revenue and payment methods; compare sales by category and division; and search recent orders. The dashboard reads live data from Google Sheets and presents it through interactive charts.',
+    image: unsplash('1551288049-bebda4e38f71'),
+    link: 'https://salesplusdashboard.vercel.app/',
+    github: 'https://github.com',
+    tech: ['React', 'Python', 'Google Sheets', 'Recharts', 'Chart.js'],
+    date: '2026',
+    category: 'Web App',
+    featured: true,
+    sortOrder: 2,
+    icon: <BarChart3 className="text-emerald-400" size={20} />,
+  },
+  {
     id: 23,
     title: 'Tidepool',
     description:
@@ -63,7 +81,7 @@ const projects = [
     date: '2026',
     category: 'Web App',
     featured: true,
-    sortOrder: 2,
+    sortOrder: 3,
     icon: <MessageSquare className="text-pink-400" size={20} />,
   },
   {
@@ -80,7 +98,7 @@ const projects = [
     date: '2026',
     category: 'Web App',
     featured: true,
-    sortOrder: 3,
+    sortOrder: 4,
     icon: <Home className="text-orange-400" size={20} />,
   },
   {
@@ -97,7 +115,7 @@ const projects = [
     date: '2026',
     category: 'Web App',
     featured: true,
-    sortOrder: 4,
+    sortOrder: 5,
     icon: <Utensils className="text-orange-400" size={20} />,
   },
   {
@@ -114,7 +132,7 @@ const projects = [
     date: '2025',
     category: 'Data Science',
     featured: true,
-    sortOrder: 5,
+    sortOrder: 6,
     icon: <Brain className="text-purple-400" size={20} />,
   },
   {
@@ -131,7 +149,7 @@ const projects = [
     date: '2026',
     category: 'Productivity',
     featured: true,
-    sortOrder: 6,
+    sortOrder: 7,
     icon: <Target className="text-green-400" size={20} />,
   },
   {
@@ -148,7 +166,7 @@ const projects = [
     date: '2025',
     category: 'Web App',
     featured: true,
-    sortOrder: 7,
+    sortOrder: 8,
     icon: <Home className="text-green-400" size={20} />,
   },
   {
@@ -165,7 +183,7 @@ const projects = [
     date: '2026',
     category: 'Web App',
     featured: true,
-    sortOrder: 8,
+    sortOrder: 9,
     icon: <Wifi className="text-blue-400" size={20} />,
   },
   {
@@ -182,7 +200,7 @@ const projects = [
     date: '2025',
     category: 'Clone',
     featured: true,
-    sortOrder: 9,
+    sortOrder: 10,
     icon: <Rocket className="text-blue-400" size={20} />,
   },
   {
@@ -199,7 +217,7 @@ const projects = [
     date: '2025',
     category: 'Management System',
     featured: true,
-    sortOrder: 10,
+    sortOrder: 11,
     icon: <Shield className="text-green-600" size={20} />,
   },
   {
@@ -216,7 +234,7 @@ const projects = [
     date: '2025',
     category: 'Management System',
     featured: true,
-    sortOrder: 11,
+    sortOrder: 12,
     icon: <Users className="text-purple-500" size={20} />,
   },
   {
@@ -233,7 +251,7 @@ const projects = [
     date: '2025',
     category: 'Education',
     featured: true,
-    sortOrder: 12,
+    sortOrder: 13,
     icon: <BookOpen className="text-blue-400" size={20} />,
   },
   {
@@ -250,7 +268,7 @@ const projects = [
     date: '2025',
     category: 'Utility',
     featured: true,
-    sortOrder: 13,
+    sortOrder: 14,
     icon: <Heart className="text-red-400" size={20} />,
   },
   {
@@ -267,7 +285,7 @@ const projects = [
     date: '2025',
     category: 'Content',
     featured: true,
-    sortOrder: 14,
+    sortOrder: 15,
     icon: <BookOpen className="text-orange-400" size={20} />,
   },
   {
@@ -284,7 +302,7 @@ const projects = [
     date: '2025',
     category: 'Management System',
     featured: true,
-    sortOrder: 15,
+    sortOrder: 16,
     icon: <ShoppingCart className="text-yellow-500" size={20} />,
   },
 

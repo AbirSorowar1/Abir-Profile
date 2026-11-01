@@ -34,6 +34,23 @@ const FALLBACK_IMAGE = unsplash('1598899134731-9618f6e1f7b2');
 const projects = [
   // ---------- Featured (serial order) ----------
   {
+    id: 25,
+    title: 'Rakib & Brothers IT Ltd. – Executive Analytics Command Center',
+    description:
+      'My latest and most advanced data analytics project: a multi-page executive dashboard tracking revenue, profit, margin and targets across sectors, clients, projects and finance.',
+    longDescription:
+      'A professional executive analytics command center built for an IT company. It brings live revenue, profit, margin and target tracking into one view, with dedicated Command, Sectors, Clients, Projects and Finance pages. Global filters for year, service line and industry let users slice the data instantly, and a Refresh control keeps the numbers current. Interactive React Charts visualizations, a Python data pipeline and a clean responsive HTML/CSS interface turn raw business data into clear, decision-ready insights.',
+    image: unsplash('1543286386-713bdd548da4'),
+    link: 'https://it-company-rakib-brother-dashboard.vercel.app/',
+    github: 'https://github.com',
+    tech: ['React', 'React Charts', 'Python', 'HTML', 'CSS'],
+    date: '2026',
+    category: 'Data Science',
+    featured: true,
+    sortOrder: 0.5, // sits before sortOrder 1, so every other project keeps its order
+    icon: <BarChart3 className="text-cyan-400" size={20} />,
+  },
+  {
     id: 17,
     title: 'Ramadan Tracker 2026',
     description:
@@ -62,7 +79,7 @@ const projects = [
     github: 'https://github.com',
     tech: ['React', 'Python', 'Google Sheets', 'Recharts', 'Chart.js'],
     date: '2026',
-    category: 'Web App',
+    category: 'Data Science',
     featured: true,
     sortOrder: 2,
     icon: <BarChart3 className="text-emerald-400" size={20} />,

@@ -36,7 +36,7 @@ const Hero = () => {
   const particleCount = windowSize.width < 640 ? 20 : windowSize.width < 1024 ? 35 : 50;
 
   return (
-    <section id="home" className="min-h-screen relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-slate-800 to-black">
+    <section id="home" className="min-h-svh relative flex items-start justify-center overflow-hidden bg-linear-to-br from-black via-slate-800 to-black px-2 pt-28 pb-16 sm:px-4 sm:pt-32 sm:pb-20">
       {/* Animated Background Particles - Responsive */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(particleCount)].map((_, i) => (
@@ -68,21 +68,21 @@ const Hero = () => {
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-400 rounded-full filter blur-3xl animate-pulse"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div className="container mx-auto w-full px-2 sm:px-6 lg:px-8 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto"
+          className="w-full max-w-5xl mx-auto"
         >
           {/* Profile Image - Imported from Photo folder */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, type: "spring" }}
-            className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 mx-auto mb-4 sm:mb-6 md:mb-8"
+            className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 mx-auto mb-4 sm:mb-5 md:mb-6"
           >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 animate-pulse" />
+            <div className="absolute inset-0 rounded-full bg-linear-to-r from-purple-500 to-pink-500 animate-pulse" />
             <img
               src={profilePicture}
               alt="Shakib Ibna Sorowar Abir"
@@ -99,9 +99,9 @@ const Hero = () => {
             initial={{ scale: 0.5 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 px-2"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 px-2 leading-tight wrap-anywhere"
           >
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Shakib Ibna Sorowar Abir
             </span>
           </motion.h1>
@@ -156,14 +156,14 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
-            className="flex flex-col items-center gap-3 sm:gap-4 md:gap-5 px-4"
+            className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 px-2 sm:px-4"
           >
             {/* First Button - Discover My Journey */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all text-sm sm:text-base md:text-lg"
+              className="w-full sm:w-auto bg-linear-to-r from-purple-500 to-pink-500 text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all text-sm sm:text-base md:text-lg"
             >
               Discover My Journey
             </motion.button>
@@ -182,7 +182,7 @@ const Hero = () => {
                 <Rocket size={windowSize.width < 640 ? 14 : 18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500"
+                className="absolute inset-0 bg-linear-to-r from-purple-500 to-pink-500"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
@@ -207,7 +207,7 @@ const Hero = () => {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
+        className="hero-scroll-indicator absolute bottom-3 sm:bottom-5 md:bottom-7 left-1/2 transform -translate-x-1/2 cursor-pointer"
         onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
       >
         <ChevronDown className="text-white w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />

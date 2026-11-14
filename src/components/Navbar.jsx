@@ -22,12 +22,13 @@ const Navbar = () => {
 
   const navItems = [
     'Home', 'About', 'Skills', 'Experience', 'Projects',
-    'Publications', 'Education', 'Clubs', 'Achievements',
+    'Publications', 'Education', 'Contract', 'Clubs', 'Achievements',
     'Blog', 'Testimonials', 'Gallery', 'Contact'
   ];
 
   const scrollToSection = (item) => {
-    const element = document.getElementById(item.toLowerCase());
+    const sectionId = item === 'Contract' ? 'contact' : item.toLowerCase();
+    const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -41,23 +42,23 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`fixed w-full z-40 transition-all duration-500 ${scrolled ? 'bg-gray-900/90 backdrop-blur-xl py-3 shadow-2xl' : 'bg-transparent py-5'
+        className={`fixed inset-x-0 top-0 w-full z-40 transition-all duration-500 ${scrolled ? 'bg-gray-900/90 backdrop-blur-xl py-3 shadow-2xl' : 'bg-transparent py-4 sm:py-5'
           }`}
       >
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo - Left Side */}
             <motion.img
               src={logo}
               alt="Logo"
-              className="h-12 w-auto cursor-pointer"
+              className="h-10 sm:h-12 w-auto max-w-[48vw] cursor-pointer object-contain"
               whileHover={{ scale: 1.1, rotate: 5 }}
               onClick={() => scrollToSection('home')}
             />
 
             {/* Desktop Menu - Hidden on mobile */}
-            <div className="hidden lg:flex items-center space-x-6">
-              {navItems.slice(0, 7).map((item, index) => (
+            <div className="hidden xl:flex items-center gap-3 2xl:gap-5">
+              {navItems.slice(0, 8).map((item, index) => (
                 <motion.button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -65,7 +66,7 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
                   whileHover={{ scale: 1.1 }}
-                  className="text-white hover:text-purple-400 font-medium relative group text-sm"
+                  className="text-white hover:text-purple-400 font-medium relative group text-xs 2xl:text-sm whitespace-nowrap"
                 >
                   {item}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all duration-300" />
@@ -78,7 +79,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden bg-purple-600/20 hover:bg-purple-600 p-2 rounded-full transition-colors relative z-50"
+              className="xl:hidden bg-purple-600/20 hover:bg-purple-600 p-2 rounded-full transition-colors relative z-50"
             >
               {isOpen ? <X className="text-white" size={24} /> : <Menu className="text-white" size={24} />}
             </motion.button>
@@ -94,7 +95,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-gray-900/95 backdrop-blur-xl z-40 lg:hidden overflow-y-auto"
+            className="fixed inset-0 bg-gray-900/95 backdrop-blur-xl z-40 xl:hidden overflow-y-auto overscroll-contain"
           >
             <div className="w-full flex justify-start p-6 mb-8 relative z-50">
               <motion.button
@@ -117,7 +118,7 @@ const Navbar = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                   whileHover={{ scale: 1.1, x: 10 }}
-                  className="text-2xl text-white hover:text-purple-400 my-3 font-medium w-full text-center py-2"
+                  className="text-xl sm:text-2xl text-white hover:text-purple-400 my-1.5 sm:my-2 font-medium w-full text-center py-2"
                 >
                   {item}
                 </motion.button>
